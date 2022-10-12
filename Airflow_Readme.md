@@ -1,4 +1,4 @@
-###Airflow Docker 
+# Airflow Docker 
 
 mkdir airflow-docker
 cd airflow-docker 
@@ -11,16 +11,16 @@ ymanan@88665a102c35 airflow-docker % docker-compose up airflow-init
 docker-compose up 
 docker ps 
 
-# Access the docker command line interface 
+## Access the docker command line interface 
 docker exec < container-id> airflow version
 
-# Interact via api 
+## Interact via api 
 curl -X GET "http://localhost:8080/api/v1/dags"
 create below env variable in docker compose file 
 
 AIRFLOW__API__AUTH_BACKEND: 'airflow.api.auth.backend.basic_auth'
 
-###Airflow-Direct
+# Airflow-Direct
 
 Create a virtual env in python which comes preinstalled with venv
   1. python3 -m venv /Users/ymanan/Documents/ProjectVirtualenv/airflowtest
