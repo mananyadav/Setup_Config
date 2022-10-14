@@ -13,6 +13,26 @@
 12.  from platform import python_version
 13.  python_version()
 
+# Import libraries in the spark locally
+1. go to maven repositories 
+2. Find the coordinates of the dependencies groupId: artifactId:version
+3. Include that in the spark configuration
+my_conf = SparkConf()
+my_conf.set("spark.appname", "New_Program")
+my_conf.set("spark.master", "local[*]")
+my_conf.set("spark.jars.packages","org.apache.hadoop:hadoop-aws:2.6.3,org.apache.hadoop:hadoop-common:2.6.3")
+
+4. set the required parameters in the sparkconfig 
+spark = SparkSession.builder.config(conf=my_conf).getOrCreate()
+sc = spark.sparkContext
+
+sc._jsc.hadoopConfiguration().set('fs,s3a.access.key','<>')
+sc._jsc.hadoopConfiguration().set('fs,s3a.secret.key','<>')
+
+5. read the file from the source location
+
+
+
 # BOTO3
 ## AWS SDK for python to create , configure , manage AWS services like Ec2 , S3
   import boto3
