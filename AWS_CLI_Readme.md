@@ -26,3 +26,5 @@ aws s3 cp CAvideos.csv s3://manan-de-on-youtube-raw-dev/youtube/raw_statistics/r
 #  DATASYNC
 ## Execute datasync with filtering enabled 
 aws datasync start-task-execution --task-arn 'arn:aws:datasync:ap-south-1:677597669914:task/task-0d0f356d1ea2a708a' --includes FilterType=SIMPLE_PATTERN,Value='/sd/*|/dpYear=2022/dpMonth=11/dpDay=5'
+
+# EMR Serverless
